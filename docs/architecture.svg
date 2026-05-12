@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="IBM Plex Mono, monospace">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#A78BFA"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="480" fill="#050505"/>
+
+  <text x="450" y="36" text-anchor="middle" fill="#E2E8F0" font-size="18" font-family="IBM Plex Serif" font-weight="600">
+    RAG Sentinel · System Architecture
+  </text>
+  <text x="450" y="58" text-anchor="middle" fill="#475569" font-size="10" letter-spacing="2">
+    DASHBOARD = THE OPERATOR SURFACE FOR THE RAG GOVERNANCE ENGINE
+  </text>
+
+  <!-- Vector Stores (input) -->
+  <g>
+    <rect x="40" y="100" width="200" height="100" rx="4" fill="#0a0a0a" stroke="#FBBF24" stroke-width="1.2"/>
+    <text x="140" y="128" text-anchor="middle" fill="#FBBF24" font-size="11" font-weight="600" letter-spacing="1.5">VECTOR STORES</text>
+    <text x="140" y="152" text-anchor="middle" fill="#E2E8F0" font-size="11">Pinecone · Weaviate · Qdrant</text>
+    <text x="140" y="170" text-anchor="middle" fill="#94A3B8" font-size="10">Embeddings · Chunks · Metadata</text>
+    <text x="140" y="188" text-anchor="middle" fill="#94A3B8" font-size="10">Quality unknown by default</text>
+  </g>
+
+  <!-- Sentinel Engine -->
+  <g>
+    <rect x="350" y="100" width="200" height="100" rx="4" fill="#0a0a0a" stroke="#A78BFA" stroke-width="1.2"/>
+    <text x="450" y="128" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="600" letter-spacing="1.5">SENTINEL ENGINE</text>
+    <text x="450" y="152" text-anchor="middle" fill="#E2E8F0" font-size="12" font-weight="500">rag-sentinel</text>
+    <text x="450" y="170" text-anchor="middle" fill="#94A3B8" font-size="10">Hallucination · Drift · Freshness</text>
+    <text x="450" y="188" text-anchor="middle" fill="#94A3B8" font-size="10">Citation quality scoring</text>
+  </g>
+
+  <!-- Dashboard (this repo) -->
+  <g>
+    <rect x="660" y="100" width="200" height="100" rx="4" fill="#0a0a0a" stroke="#06B6D4" stroke-width="1.2"/>
+    <text x="760" y="128" text-anchor="middle" fill="#06B6D4" font-size="11" font-weight="600" letter-spacing="1.5">DASHBOARD (THIS REPO)</text>
+    <text x="760" y="152" text-anchor="middle" fill="#E2E8F0" font-size="12" font-weight="500">rag-sentinel-dashboard</text>
+    <text x="760" y="170" text-anchor="middle" fill="#94A3B8" font-size="10">Operator surface · React 19</text>
+    <text x="760" y="188" text-anchor="middle" fill="#94A3B8" font-size="10">rag.kineticgain.com</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="240" y1="150" x2="350" y2="150" stroke="#A78BFA" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="295" y="142" text-anchor="middle" fill="#475569" font-size="9">retrievals</text>
+
+  <line x1="550" y1="150" x2="660" y2="150" stroke="#A78BFA" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="605" y="142" text-anchor="middle" fill="#475569" font-size="9">audit feed</text>
+
+  <!-- Detail boxes below -->
+  <text x="40" y="260" fill="#475569" font-size="10" letter-spacing="2">WHAT GETS INSPECTED</text>
+
+  <g>
+    <rect x="40" y="280" width="200" height="60" rx="3" fill="#0a0a0a" stroke="#1E293B"/>
+    <text x="140" y="302" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="500">Hallucination signals</text>
+    <text x="140" y="320" text-anchor="middle" fill="#94A3B8" font-size="10">Response vs cited source</text>
+  </g>
+
+  <g>
+    <rect x="260" y="280" width="200" height="60" rx="3" fill="#0a0a0a" stroke="#1E293B"/>
+    <text x="360" y="302" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="500">Source freshness</text>
+    <text x="360" y="320" text-anchor="middle" fill="#94A3B8" font-size="10">Stale corpus detection</text>
+  </g>
+
+  <g>
+    <rect x="480" y="280" width="200" height="60" rx="3" fill="#0a0a0a" stroke="#1E293B"/>
+    <text x="580" y="302" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="500">Retrieval quality</text>
+    <text x="580" y="320" text-anchor="middle" fill="#94A3B8" font-size="10">Top-k relevance + reranker</text>
+  </g>
+
+  <g>
+    <rect x="700" y="280" width="160" height="60" rx="3" fill="#0a0a0a" stroke="#1E293B"/>
+    <text x="780" y="302" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="500">Quality score</text>
+    <text x="780" y="320" text-anchor="middle" fill="#94A3B8" font-size="10">0-100 board-readable</text>
+  </g>
+
+  <!-- Bottom: phase status -->
+  <line x1="40" y1="380" x2="860" y2="380" stroke="#1E293B"/>
+  <text x="40" y="404" fill="#475569" font-size="10" letter-spacing="2">ROADMAP STATUS</text>
+
+  <g>
+    <circle cx="60" cy="430" r="4" fill="#A78BFA"/>
+    <text x="76" y="434" fill="#E2E8F0" font-size="11">v0.1 — UX shipped</text>
+  </g>
+  <g>
+    <circle cx="280" cy="430" r="4" fill="#FBBF24"/>
+    <text x="296" y="434" fill="#94A3B8" font-size="11">v0.2 — Live vector store scanning</text>
+  </g>
+  <g>
+    <circle cx="560" cy="430" r="4" fill="#475569"/>
+    <text x="576" y="434" fill="#475569" font-size="11">v0.3 — Multi-corpus fleet view</text>
+  </g>
+  <g>
+    <circle cx="780" cy="430" r="4" fill="#475569"/>
+    <text x="796" y="434" fill="#475569" font-size="11">v1.0 — SaaS</text>
+  </g>
+</svg>
